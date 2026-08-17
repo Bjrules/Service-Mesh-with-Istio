@@ -38,8 +38,10 @@ kubectl label namespace webapps istio-injection=enabled
 
 # 5) Deploy the sample App (Bookinfo)
 `kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml -n webapps`
-Deploys:
+This deploys:
     • productpage, details, reviews, ratings microservices
-    
+
  ![alt text](IMG-Screenshots/Screenshot_20260816_162318.png) 
 
+# 6) Expose App via Istio Gateway
+Istio gateway will sit in front of the application as the Loadbalancer just like Nginx ingress or Gateway API.       But in this case since I'm are using service mesh to interact with our microservices it will be forwarding requests to the Envoy        sidecar containers attached to the various pods via mtls which         talks to thier respective pods securely
