@@ -58,6 +58,7 @@ Istio gateway will sit in front of the application as the Loadbalancer just like
 ![alt text](IMG-Screenshots/Screenshot_20260816_164453.png)
 
 # 7) Enable mTLS for the App
+mtls is that feature of 
 ![alt text](IMG-Screenshots/Screenshot_20260816_172331.png)
 
 ![alt text](IMG-Screenshots/Screenshot_20260816_172305.png)
@@ -65,6 +66,19 @@ Istio gateway will sit in front of the application as the Loadbalancer just like
 `sudo vi strict-mtls.yaml` ||| `kubectl apply -f strict-mtls.yaml`
 
 # 8) Enable Observability
-Deploy addons Directory
+Deploy addons Directory  for prometheus and Grafana   
 `kubectl apply -f samples/addons`
 
+![alt text](IMG-Screenshots/Screenshot_20260816_194114.png)
+
+> sell all deployed
+
+![alt text](IMG-Screenshots/Screenshot_20260816_195041.png)
+
+**Note Two very important concept in Istio are `DestinationRule` and `VirtualService`**
+
+DestinationRule: The resource where pods are given specific Addresses called `labels` which serves as a unique ID for every pods.        
+
+VirtualService: The resource where the percentage of traffice pods are specified and determine though `weight` parameters.
+
+## This shows that istio is also a tool for canary Deployment and DevOps just like ArgoRollouts.
