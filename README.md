@@ -3,3 +3,9 @@ This Explores the benefits and advantages of service mesh using istio. as a bett
 
 - [x] Useful links to this project by istio [Istio official Bookinfo Guide](https://istio.io/latest/docs/examples/bookinfo/) 
 - [x] Direct github repo to the project by istio [Click here](https://github.com/istio/istio/tree/master/samples/bookinfo)
+
+# 1) Set up a Kubenetes Cluster
+
+Awscli, Terraform(IaC) . Kubectl , Ekctl,
+
+
