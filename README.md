@@ -44,4 +44,16 @@ This deploys:
  ![alt text](IMG-Screenshots/Screenshot_20260816_162318.png) 
 
 # 6) Expose App via Istio Gateway
-Istio gateway will sit in front of the application as the Loadbalancer just like Nginx ingress or Gateway API.       But in this case since I'm are using service mesh to interact with our microservices it will be forwarding requests to the Envoy        sidecar containers attached to the various pods via mtls which         talks to thier respective pods securely
+Istio gateway will sit in front of the application as the Loadbalancer just like Nginx ingress or Gateway API.       But in this case since I'm are using service mesh to interact with our microservices it will be forwarding requests to the Envoy        sidecar containers attached to the various pods via mtls which         talks to thier respective pods securely.
+
+**Get EXTERNAL IP:**
+`kubectl get svc istio-ingressgateway -n istio-system`
+
+![alt text](IMG-Screenshots/Screenshot_20260816_162550.png)
+
+![alt text](IMG-Screenshots/Screenshot_20260816_163206.png)
+>Application is exposed
+![alt text](IMG-Screenshots/Screenshot_20260816_164437.png)
+
+![alt text](IMG-Screenshots/Screenshot_20260816_164453.png)
+
