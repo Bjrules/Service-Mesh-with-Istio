@@ -9,3 +9,12 @@ This Explores the benefits and advantages of service mesh using istio. as a bett
 Awscli, Terraform(IaC) . Kubectl , Ekctl,
 
 
+# 2) Install and set up istio
+
+```yaml
+curl -L https://istio.io/downloadIstio | sh -
+cd istio-1.30.3
+export PATH=$PWD/bin:$PATH
+
+```
+![alt text](IMG-Screenshots/Screenshot_20260816_164437.png)
