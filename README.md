@@ -9,7 +9,7 @@ This Explores the benefits and advantages of service mesh using istio. as a bett
 Awscli, Terraform(IaC) . Kubectl , Ekctl,
 
 
-# 2) Install and set up istio
+# 2) Download istio and also add bin directory to the system path
 
 ```yaml
 curl -L https://istio.io/downloadIstio | sh -
@@ -17,4 +17,29 @@ cd istio-1.30.3
 export PATH=$PWD/bin:$PATH
 
 ```
+
 ![alt text](IMG-Screenshots/Screenshot_20260816_164437.png)
+
+![alt text](IMG-Screenshots/Screenshot_20260816_161608.png)
+
+# 3) Install Istio using istioctl 
+`istioctl install --set profile=demo -y`
+this installs the istio control plane `istiod` `istio-ingressgateway` and `istio-egressgateway` etc
+![alt text](IMG-Screenshots/Screenshot_20260816_161744.png)
+
+# 4) create and Label Namespace for Auto Sidecar Injection
+This means that every pod inside the namespace will be attached with istio's Envoy sidecar container 
+```
+kubectl create ns webapps
+kubectl label namespace webapps istio-injection=enabled
+
+```
+![alt text](IMG-Screenshots/Screenshot_20260816_161830.png)
+
+# 5) Deploy the sample App (Bookinfo)
+`kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml -n webapps`
+Deploys:
+    • productpage, details, reviews, ratings microservices
+    
+ ![alt text](IMG-Screenshots/Screenshot_20260816_162318.png) 
+
