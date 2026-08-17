@@ -157,4 +157,6 @@ spec:
 
 ```
 
+## FootNote: Kubernetes GatewayAPI is the future since Istio supports itand intends to make it the default API for traffic management going forward
+
 # Thank You !!!
