@@ -143,15 +143,15 @@ spec:
   http:
     - route:
         - destination:
-            host: reviews
-            subset: v1
-          weight: 40
+            host: reviews     # Host refers to the label of the Deployment kindly refer to bookinfo.yaml
+            subset: v1        # As in DestinationRule
+          weight: 40          # percentage of traffic expected
         - destination:
-            host: reviews
+            host: reviews     
             subset: v3
           weight: 30
         - destination:
-            host: reviews
+            host: reviews      
             subset: v2
           weight: 30
 
