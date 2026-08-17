@@ -57,3 +57,7 @@ Istio gateway will sit in front of the application as the Loadbalancer just like
 
 ![alt text](IMG-Screenshots/Screenshot_20260816_164453.png)
 
+# 7) Enable mTLS for the App
+![alt text](IMG-Screenshots/Screenshot_20260816_172331.png)
+
+![alt text](IMG-Screenshots/Screenshot_20260816_172305.png)
