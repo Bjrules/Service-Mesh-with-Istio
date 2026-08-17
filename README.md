@@ -75,6 +75,18 @@ Deploy addons Directory  for prometheus and Grafana
 
 ![alt text](IMG-Screenshots/Screenshot_20260816_195041.png)
 
+>Modify grafana service from ClusterIP to LoadBalacer `kubectl edit svc grafana istio-system`
+
+![alt text](IMG-Screenshots/Screenshot_20260816_195417.png)
+>Grafana Screenshots of configuration to receive data from prometheus as it's Datasource for monitoring
+
+![alt text](IMG-Screenshots/Screenshot_20260816_203640.png)
+![alt text](IMG-Screenshots/Screenshot_20260816_203623.png)
+
+
+>also Modify prometheus service from ClusterIP to LoadBalacer `kubectl edit svc prometheus istio-system`
+
+
 **Note Two very important concept in Istio are `DestinationRule` and `VirtualService`**
 
 DestinationRule: The resource where pods are given specific Addresses called `labels` which serves as a unique ID for every pods.        
@@ -82,3 +94,6 @@ DestinationRule: The resource where pods are given specific Addresses called `la
 VirtualService: The resource where the percentage of traffice pods are specified and determine though `weight` parameters.
 
 ## This shows that istio is also a tool for canary Deployment and DevOps just like ArgoRollouts.
+
+![alt text](IMG-Screenshots/Screenshot_20260816_191430.png)
+
