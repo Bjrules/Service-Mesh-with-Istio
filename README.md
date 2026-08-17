@@ -61,3 +61,10 @@ Istio gateway will sit in front of the application as the Loadbalancer just like
 ![alt text](IMG-Screenshots/Screenshot_20260816_172331.png)
 
 ![alt text](IMG-Screenshots/Screenshot_20260816_172305.png)
+
+`sudo vi strict-mtls.yaml` ||| `kubectl apply -f strict-mtls.yaml`
+
+# 8) Enable Observability
+Deploy addons Directory
+`kubectl apply -f samples/addons`
+
