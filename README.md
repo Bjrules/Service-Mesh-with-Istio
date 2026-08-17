@@ -102,5 +102,58 @@ VirtualService: The resource where the percentage of traffice pods are specified
 
 ## This shows that istio is also a tool for canary Deployment and DevOps just like ArgoRollouts.
 
+
 ![alt text](IMG-Screenshots/Screenshot_20260816_191430.png)
+
+kubectl apply -f drvs.yaml
+
+```yaml
+
+#Destination Rule:
+
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: reviews
+spec:
+  host: reviews
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+  - name: v3
+    labels:
+      version: v3
+
+
+# Virtual Service:
+
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: reviews
+  namespace: webapps
+spec:
+  hosts:
+    - reviews
+  http:
+    - route:
+        - destination:
+            host: reviews
+            subset: v1
+          weight: 40
+        - destination:
+            host: reviews
+            subset: v3
+          weight: 30
+        - destination:
+            host: reviews
+            subset: v2
+          weight: 30
+
+```
 
