@@ -75,17 +75,24 @@ Deploy addons Directory  for prometheus and Grafana
 
 ![alt text](IMG-Screenshots/Screenshot_20260816_195041.png)
 
+>Modify prometheus service from ClusterIP to LoadBalacer `kubectl edit svc prometheus istio-system`. Remember prometheus runs on port 9090
+![alt text](IMG-Screenshots/Screenshot_20260816_203821.png)
+
 >Modify grafana service from ClusterIP to LoadBalacer `kubectl edit svc grafana istio-system`
 
 ![alt text](IMG-Screenshots/Screenshot_20260816_195417.png)
->Grafana Screenshots of configuration to receive data from prometheus as it's Datasource for monitoring
+>Grafana Screenshots of configuration to receive data from prometheus as it's Datasource for monitoring. Remember Grafana runs on port 3000
 
+![alt text](IMG-Screenshots/Screenshot_20260816_203857.png)
 ![alt text](IMG-Screenshots/Screenshot_20260816_203640.png)
 ![alt text](IMG-Screenshots/Screenshot_20260816_203623.png)
 
+![alt text](IMG-Screenshots/Screenshot_20260816_204444.png)
 
->also Modify prometheus service from ClusterIP to LoadBalacer `kubectl edit svc prometheus istio-system`
+![alt text](IMG-Screenshots/Screenshot_20260816_205410.png)
 
+> `kubectl get all -n istio-system`
+![alt text](IMG-Screenshots/Screenshot_20260816_205443.png)
 
 **Note Two very important concept in Istio are `DestinationRule` and `VirtualService`**
 
